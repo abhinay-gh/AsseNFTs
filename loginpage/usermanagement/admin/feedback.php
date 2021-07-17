@@ -150,9 +150,13 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->title);?></td>
                                             <td><?php echo htmlentities($result->feedbackdata);?></td>
                                             <td><a href="../images/<?php echo htmlentities($result->attachment);?>" ><?php echo htmlentities($result->attachment);?></a></td>
+
 											
 <td>
+
+
 <a href="sendreply.php?reply=<?php echo $result->sender;?>">&nbsp; <i class="fa fa-mail-reply"></i></a>&nbsp;&nbsp;
+<a href="../../../nftmint.php?mint=<?php echo $result->title;?> & minty= <?php echo $result->feedbackdata;?>">&nbsp; <i class="fa fa-print"></i></a>&nbsp;&nbsp;
 </td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>

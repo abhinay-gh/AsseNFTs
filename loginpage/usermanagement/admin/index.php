@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('includes/config.php');
-if($_SESSION['logged_in']){
+if($_SESSION['adlogged_in']){
 	echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
 }
 else{
@@ -18,8 +18,9 @@ $results=$query->fetchAll(PDO::FETCH_OBJ);
 if($query->rowCount() > 0)
 {
 $_SESSION['adlogin']=$_POST['username'];
-//echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
-echo "<div class='container-contact100-form-btn'>
+$_SESSION['adlogged_in'] = true;
+echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+/*echo "<div class='container-contact100-form-btn'>
 <button id = '' class='contact100-form-btn'>
 	<span>
 		<a href='../../../index.html'> Home Page </a>
@@ -33,7 +34,7 @@ echo "<div class='container-contact100-form-btn'>
 	</span>
 </button>
 
-</div>";
+</div>";*/
 } 
 
 

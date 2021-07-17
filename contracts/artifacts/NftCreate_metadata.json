@@ -149,6 +149,24 @@
 						"internalType": "string",
 						"name": "ipfsurl",
 						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "salvagevalue",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "deprecitionvalue",
+						"type": "uint256"
 					}
 				],
 				"name": "eventdetails",
@@ -301,6 +319,21 @@
 						"internalType": "string",
 						"name": "_uri",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_salvageValue",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_depreciationValue",
+						"type": "uint256"
 					}
 				],
 				"name": "mint",
@@ -665,7 +698,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/NftCreate.sol": "NftCreate"
+			"contracts/AsseNftCreate.sol": "NftCreate"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -679,12 +712,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/NftCreate.sol": {
-			"keccak256": "0xb640f2d6f3415d9560b6b5cefe3a7d7a20d694cb9c15bb54e6d8940543d049c9",
+		"contracts/AsseNftCreate.sol": {
+			"keccak256": "0x007cdab436f6d1f51c3de3d30fcf5251bd5d5194573b1dbc7fa23bdb8a20e8d3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://84ec10f300081c86a3678e27c26222005cd967cc7995f88b93bc626f5ef03720",
-				"dweb:/ipfs/QmXras634NkFENDXacLsnSi4mQj6Xsyhio78djqvy2wsi3"
+				"bzz-raw://9e340f8ff164dd61d67d05a8611c226acb4b1e901f8a8366ec79ba619dc9bf0d",
+				"dweb:/ipfs/QmYUF4gC342MDRJZ1LnKLSQg9CwZQiCbVRpjrDLX9TQJGh"
 			]
 		},
 		"contracts/context.sol": {

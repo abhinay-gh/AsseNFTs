@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<!--DOCTYPE html-->
+<?php
+session_start();
+error_reporting(0);
+include('includes/config.php');
+if(strlen($_SESSION['alogin']) ==0 && strlen($_SESSION['adlogin']) ==0 )
+	{	
+echo "<script type='text/javascript'>alert('Please Login First!');</script>";
+//echo "<div>PLease login first </div>";
+header('location: loginpage/usermanagement/index.php');
+}
+else{
+
+
+
+?>
+
 <html lang="en">
 <head>
 	<title>AsseNFT viewer</title>
@@ -24,7 +40,7 @@
 	<!--link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css"-->
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/mainly.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -34,7 +50,7 @@
 		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
 		<div class="wrap-contact100">
-			<div class="contact100-form-title" style="background-image: url(images/blue.png);">
+			<div class="contact100-form-title" style="background-image: url(images/index.jpeg);">
 				<span class="contact100-form-title-1">
 					These are the details of the Asset
 				</span>
@@ -42,62 +58,61 @@
 					<div class="wrap-input100 validate-input" >
 						<span class="label-input100"> Owner address: </span>
 						<!--input class="input100" type="text" name="name" placeholder=""-->
-						<output id = 'owneraddoutput'>  </output>
+						<output id = 'owneraddoutput'placeholder='Results are getting loaded'>  </output>
 						<span class="focus-input100"></span>
 					   
 					</div>
 					
 					<div class="wrap-input100 validate-input" >
 						<span class="label-input100">Asset name:</span>
-						<!--input class="input100" type="text" name="nft name" placeholder=""-->
-						<output id = 'nftnameoutput'>  </output>
+						<output id = 'nftnameoutput'placeholder='Results are getting loaded'>  </output>
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" >
-						<span class="label-input100">Description:</span>
-						<!--input class="input100" type="text" name="nft name" placeholder=""-->
-						<output id = 'nftdescription'> 
-							<textarea class="input100" name="nftdescription" id = "nftdescription" placeholder=""></textarea>	
-						</output>
-						<span class="focus-input100"></span>
-					</div>
+				
 					<div class="wrap-input100 validate-input" >
 						<span class="label-input100">Depreciation Value:</span>
 						<!--input class="input100" type="text" name="nft name" placeholder=""-->
-						<output id = 'nftdv'>  </output>
+						<output id = 'nftdv'placeholder='Results are getting loaded'>  </output>
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input" >
 						<span class="label-input100">Salvage Value:</span>
 						<!--input class="input100" type="text" name="nft name" placeholder=""-->
-						<output id = 'nftsv'>  </output>
+						<output id = 'nftsv'placeholder='Results are getting loaded'>  </output>
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" >
 						<span class="label-input100"> timestamp:</span>
 						<!--input class="input100" type="text" name="owner name" placeholder=""-->
-						<output id = 'nfttimestamp'> </output>
+						<output id = 'nfttimestamp'placeholder='Results are getting loaded'> </output>
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input" >
 						<span class="label-input100">Asset blocknumber:</span>
 						<!--input class="input100" type="text" name="owner name" placeholder=""-->
-						<output id = 'nftblocknumber'> </output>
+						<output id = 'nftblocknumber'placeholder='Results are getting loaded'> </output>
 						<span class="focus-input100"></span>
 					</div>
 					<div class="wrap-input100 validate-input" >
 						<span class="label-input100">total Assets:</span>
 						<!--input class="input100" type="text" name="owner name" placeholder=""-->
-						<output id = 'totalnfts'> </output>
+						<output id = 'totalnfts'placeholder='Results are getting loaded'> </output>
 						<span class="focus-input100"></span>
 					</div>
-					
+					<div class="wrap-input100 validate-input" >
+						<span class="label-input100">Description:</span>
+						<!--input class="input100" type="text" name="nft name" placeholder=""-->
+						<output id = 'nftdescription'placeholder='Results are getting loaded'> 
+							<textarea class="input100" name="nftdescription" id = "nftdescription" placeholder=""></textarea>	
+						</output>
+						<span class="focus-input100"></span>
+					</div>
 					<div class="wrap-input100 validate-input" >
 						<span class="label-input100"> AsseNFT:</span>
 						<!--input class="input100" type="text" name="nft displayed" placeholder=""-->
-						<output id = 'nfturl'></output>
+						<output id = 'nfturl'placeholder='Results are getting loaded'></output>
 							<img src = "" alt = "image is getting loaded" id ='image' height ="70" width ="150"> </img>   
 						
 						<span class="focus-input100"></span>
@@ -131,7 +146,7 @@ async function CheckMetamaskConnection(){
         }
      }
   	    var contaddress = "0xA394e00185fDE6b0EED90122399461AaF96935ad";
-		var abi = [
+var abi = [
 	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
@@ -770,3 +785,5 @@ async function CheckMetamaskConnection(){
 	</script>
 </body>
 </html>
+
+<?php } ?>

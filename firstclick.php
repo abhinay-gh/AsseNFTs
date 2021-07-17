@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<!--DOCTYPE html-->
+<?php
+session_start();
+error_reporting(0);
+include('includes/config.php');
+if(strlen($_SESSION['alogin'])==0 && strlen($_SESSION['adlogin']) ==0 )
+	{	
+echo "<script type='text/javascript'>alert('Please Login First!');</script>";
+//echo "<div>PLease login first </div>";
+header('location: loginpage/usermanagement/index.php');
+}
+else{
+
+
+
+?>
 <html lang="en">
 <head>
 	<title>AsseNFT viewer</title>
@@ -24,7 +39,7 @@
 	<!--link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css"-->
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/mainly.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -72,7 +87,7 @@
 				<div class="container-contact100-form-btn">
 					<button id = "submit" class="contact100-form-btn">
 						<span>
-							<a href="givedetails.html">Submit</a>
+							<a href="givedetails.php">Submit</a>
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
 					</button>
@@ -133,3 +148,4 @@
 
 </body>
 </html>
+<?php } ?>

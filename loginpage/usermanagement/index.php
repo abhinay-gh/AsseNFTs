@@ -1,8 +1,12 @@
 <?php
 session_start();
 include('includes/config.php');
-if($_SESSION['logged_in']){
+if($_SESSION['logged_in'] || $_SESSION['adlogged_in']){
+	if(strlen($_SESSION['alogin'])==0){
+	echo "<script type='text/javascript'> document.location = 'admin/profile.php'; </script>";}
+	else 
 	echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
+
 }
 else{
 if(isset($_POST['login']))
@@ -21,10 +25,9 @@ if($query->rowCount() > 0)
 {
 $_SESSION['alogin']=$_POST['username'];
 $_SESSION['logged_in'] = true;
+echo "<script type = 'text/javascript'>document.location = 'profile.php';</script>";
 
-echo
-//<script type = 'text/javascript'>document.location = '../../index.html';</script>
-"<div class='container-contact100-form-btn'>
+/*"<div class='container-contact100-form-btn'>
 					<button id = '' class='contact100-form-btn'>
 						<span>
 							<a href='../../index.html'> Home Page </a>
@@ -38,9 +41,7 @@ echo
 						</span>
 					</button>
 			
-</div>";
-
-//echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
+</div>";*/
 } else{
   
   echo "<script>alert('Invalid Details Or Account Not Confirmed');</script>";
